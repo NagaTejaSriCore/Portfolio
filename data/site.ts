@@ -26,6 +26,8 @@ export interface SiteConfig {
   };
 }
 
+export const SITE_URL = "https://portfolio-rho-sable-31.vercel.app";
+
 // NOTE: Please place your actual PDF resume at: /public/resume/Naga_Tejasri_Resume.pdf
 export const siteConfig: SiteConfig = {
   name: "NAGA TEJASRI.",
@@ -60,7 +62,7 @@ export const siteConfig: SiteConfig = {
       "Next.js",
       "Python"
     ],
-    ogImage: "/og-image.png",
-    url: "https://naga-tejasri.vercel.app",
+    ogImage: "/opengraph-image",
+    url: SITE_URL,
   },
 };

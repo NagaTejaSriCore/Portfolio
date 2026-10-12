@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { siteConfig } from "@/data/site";
+import { siteConfig, SITE_URL } from "@/data/site";
 import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.seo.url),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: siteConfig.seo.title,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
-  authors: [{ name: siteConfig.name, url: siteConfig.seo.url }],
+  authors: [{ name: siteConfig.name, url: SITE_URL }],
   creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.seo.url,
+    url: SITE_URL,
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
     siteName: `${siteConfig.name} Portfolio`,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: siteConfig.seo.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} Developer Portfolio`,
+        alt: "Naga Tejasri | Student | Full-Stack & AI/ML",
       },
     ],
   },
