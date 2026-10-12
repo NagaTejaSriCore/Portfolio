@@ -295,6 +295,7 @@ export default function AboutSection() {
             href={siteConfig.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
+            download="Naga_Tejasri_Resume.pdf"
             className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white text-xs font-bold tracking-wider uppercase transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
           >
             <FileText className="w-4 h-4" />

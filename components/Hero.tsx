@@ -103,6 +103,7 @@ export default function Hero() {
             href={siteConfig.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
+            download="Naga_Tejasri_Resume.pdf"
             className="inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-full bg-accent-blue text-white font-bold text-xs tracking-wider uppercase hover:bg-accent-blueHover transition-all shadow-md shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
           >
             <FileText className="w-4 h-4" />
