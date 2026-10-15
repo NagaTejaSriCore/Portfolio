@@ -1,8 +1,8 @@
 export interface EducationConfig {
-  degree?: string;  // TODO: e.g. "B.Tech"
-  branch?: string;  // TODO: e.g. "Computer Science & Engineering"
-  year?: string;    // TODO: e.g. "2nd Year"
-  college?: string; // TODO: e.g. "NxtWave Institute of Advanced Technologies (NIAT) CDU Campus"
+  degree?: string;
+  branch?: string;
+  year?: string;
+  college?: string;
 }
 
 export interface SiteConfig {
@@ -11,12 +11,14 @@ export interface SiteConfig {
   roleLabel: string;
   oneLiner: string;
   education?: EducationConfig;
+  heroEducationLine?: string;
   supportingText: string;
   availability: string;
   email: string;
+  phone?: string;
   githubUrl: string;
   linkedinUrl: string;
-  resumeUrl: string; // Path to PDF in public/resume/
+  resumeUrl: string;
   seo: {
     title: string;
     description: string;
@@ -35,18 +37,19 @@ export const siteConfig: SiteConfig = {
   roleLabel: "STUDENT · FULL-STACK & AI/ML",
   oneLiner: "I build AI-powered full-stack projects.",
   education: {
-    // TODO: Replace placeholders with real education details when ready
-    degree: undefined, // TODO: e.g., "B.Tech"
-    branch: undefined, // TODO: e.g., "Computer Science & Engineering"
-    year: undefined,   // TODO: e.g., "2nd Year"
-    college: undefined, // TODO: e.g., "NIAT CDU Campus"
+    degree: "Bachelor of Technology",
+    branch: "Computer Science and Engineering",
+    year: "2025 - 2029",
+    college: "NxtWave Institute of Advanced Technologies (NIAT), CDU Campus (Chaitanya Deemed to be University)",
   },
-  supportingText: "I'm a student building AI-powered applications, RAG systems, and agent-based projects. I'm interested in solving practical problems through software and AI.",
-  availability: "Open to Internships & Full-Time Roles",
+  phone: "6302227698",
+  heroEducationLine: "B.Tech CSE · NIAT, CDU Campus · 2025 – 2029",
+  supportingText: "I'm a student building AI-powered full-stack applications with React, Node.js, Python, and LLM APIs like Gemini and Groq. I'm looking for an AI / full-stack internship.",
+  availability: "Open to Internships",
   email: "tejasrib2008@gmail.com",
   githubUrl: "https://github.com/NagaTejaSriCore",
   linkedinUrl: "https://www.linkedin.com/in/naga-tejasri-bhavirisetty-25311236a",
-  resumeUrl: "/resume/Naga_Tejasri_Resume.pdf",
+  resumeUrl: "/Naga_Tejasri_Resume.pdf",
   seo: {
     title: "Naga Tejasri | Student | Full-Stack & AI/ML",
     description: "Personal portfolio of Naga Tejasri, a student building AI-powered applications, RAG systems, and full-stack projects.",

@@ -10,9 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -183,9 +184,8 @@ export default function Navbar() {
 
           {/* Blue RESUME Button */}
           <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Naga_Tejasri_Resume.pdf"
+            download="Naga_Tejasri_Resume.pdf"
             className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white font-bold text-xs tracking-wider uppercase transition-all shadow-md shadow-accent-blue/20 hover:shadow-accent-blue/30 focus:outline-none focus:ring-2 focus:ring-accent-blue"
           >
             <FileText className="w-3.5 h-3.5" />
@@ -257,9 +257,8 @@ export default function Navbar() {
                 </div>
 
                 <a
-                  href={siteConfig.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/Naga_Tejasri_Resume.pdf"
+                  download="Naga_Tejasri_Resume.pdf"
                   onClick={() => setMobileMenuOpen(false)}
                   className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-accent-blue text-white font-bold text-xs uppercase"
                 >

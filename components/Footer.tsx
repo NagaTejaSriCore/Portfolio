@@ -19,13 +19,10 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/[0.08] bg-[#030304] py-8 relative z-10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
-        {/* Left: Copyright & Subtitle */}
-        <div className="space-y-1">
+        {/* Left: Copyright */}
+        <div>
           <p className="text-xs sm:text-sm font-medium text-text-secondary">
-            © {currentYear} Naga Tejasri. All rights reserved.
-          </p>
-          <p className="text-[11px] font-mono text-text-muted">
-            Built with Next.js and Framer Motion.
+            © 2026 Naga Tejasri
           </p>
         </div>
 

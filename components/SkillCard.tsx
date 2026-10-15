@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import { SkillCategory } from "@/data/skills";
 import { getTechIconConfig } from "@/lib/techIcons";
-import { Code2, Bot, Globe, Database } from "lucide-react";
+import { Code2, Bot, Globe, Database, Wrench } from "lucide-react";
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "languages-core": Code2,
-  "genai-agents": Bot,
   "web-development": Globe,
-  "databases-tools": Database,
+  "databases-orm": Database,
+  "genai-agents": Bot,
+  "databases-tools": Wrench,
 };
 
 export default function SkillCard({

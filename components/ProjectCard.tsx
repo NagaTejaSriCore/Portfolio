@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Project } from "@/data/projects";
 import { getTechIconConfig } from "@/lib/techIcons";
-import { ArrowUpRight, Github, ExternalLink, Terminal } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 export default function ProjectCard({
   project,
@@ -42,30 +42,10 @@ export default function ProjectCard({
             {project.title}
           </h3>
 
-          {/* Short Description (1-2 lines, ~25 words max) */}
-          <p className="text-xs sm:text-sm text-text-secondary mb-4 leading-relaxed line-clamp-2">
+          {/* Short Description */}
+          <p className="text-xs sm:text-sm text-text-secondary mb-4 leading-relaxed">
             {project.shortDescription}
           </p>
-
-          {/* Optional Image screenshot if provided */}
-          {project.image && (
-            <div className="mb-4 rounded-xl overflow-hidden border border-white/[0.08]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={project.image}
-                alt={`${project.title} screenshot`}
-                className="w-full h-36 object-cover"
-              />
-            </div>
-          )}
-
-          {/* Special Colab Note for CrewAI Game */}
-          {project.colabNote && (
-            <div className="mb-4 p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300 font-mono flex items-center gap-2">
-              <Terminal className="w-3.5 h-3.5 shrink-0" />
-              <span>{project.colabNote}</span>
-            </div>
-          )}
 
           {/* Technology Stack Chips (Icon + Name) */}
           <div className="flex flex-wrap gap-1.5 mb-4">
@@ -84,9 +64,21 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* GitHub + Live Demo Buttons */}
+        {/* Live Demo + GitHub Buttons */}
         <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between">
           <div className="flex items-center space-x-4">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1 text-xs font-bold tracking-wider text-accent-blue hover:text-white transition-colors"
+              >
+                <span>Live Demo</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -95,28 +87,7 @@ export default function ProjectCard({
                 className="inline-flex items-center space-x-1 text-xs font-bold tracking-wider text-text-secondary hover:text-white transition-colors"
               >
                 <Github className="w-3.5 h-3.5" />
-                <span>GITHUB</span>
-              </a>
-            )}
-
-            {project.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-1 text-xs font-bold tracking-wider text-accent-blue hover:text-white transition-colors"
-              >
-                {project.id === "crewai-game" ? (
-                  <>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>NOTEBOOK</span>
-                  </>
-                ) : (
-                  <>
-                    <span>DEMO</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </>
-                )}
+                <span>GitHub</span>
               </a>
             )}
           </div>

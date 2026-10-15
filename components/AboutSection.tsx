@@ -263,9 +263,15 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 scroll-mt-24 select-none"
+      className="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 scroll-mt-24 select-none relative"
     >
-      <SectionHeading number="03" category="ABOUT" title="ABOUT ME" />
+      <div id="achievements" className="absolute -top-24" />
+      <SectionHeading
+        number="01"
+        category="ABOUT"
+        title="ACHIEVEMENTS"
+        description="Milestones, hackathons, and programs I've participated in as a student."
+      />
 
       {/* Intro Bio & Download Resume */}
       <motion.div
@@ -292,9 +298,7 @@ export default function AboutSection() {
 
         <div className="pt-2">
           <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Naga_Tejasri_Resume.pdf"
             download="Naga_Tejasri_Resume.pdf"
             className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white text-xs font-bold tracking-wider uppercase transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
           >

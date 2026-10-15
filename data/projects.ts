@@ -13,70 +13,44 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    id: "inventra",
+    title: "Inventra",
+    category: "Full-Stack",
+    shortDescription:
+      "AI-powered inventory management platform. I built the Automation & Smart Features module (expiry checks, low-stock detection, email alerts), OCR invoice scanning and barcode scanning.",
+    techStack: ["JavaScript", "React.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Groq API"],
+    githubUrl: "https://github.com/hasinipabba/Inventra",
+    demoUrl: "https://inventra-ai-lyart.vercel.app/",
+  },
+  {
     id: "core9",
     title: "CORE9",
     category: "AI & GenAI",
     isFeatured: true,
     shortDescription:
-      "Multi-agent AI platform where eight dependent agents turn incident information into decisions, plans, and reports.",
+      "Multi-agent crisis intelligence platform with an 8-agent Gemini workflow.",
     techStack: ["React.js", "Vite", "Node.js", "Express.js", "Supabase", "Gemini API"],
     githubUrl: "https://github.com/NagaTejaSriCore/Core9",
     demoUrl: "https://core9-frontend.vercel.app/",
   },
   {
-    id: "inventra",
-    title: "Inventra",
-    category: "Full-Stack",
-    isFeatured: false,
-    shortDescription:
-      "AI-powered inventory system with low-stock and expiry alerts, purchase automation, barcode scanning, and invoice OCR.",
-    techStack: ["Next.js", "React.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Groq API"],
-    githubUrl: "https://github.com/hasinipabba/Inventra",
-    demoUrl: "https://inventra-ai-lyart.vercel.app/",
-  },
-  {
     id: "luxespace",
     title: "LuxeSpace Interiors",
     category: "AI & GenAI",
-    isFeatured: false,
     shortDescription:
-      "AI chatbot assistant built for an interior design business to handle visitor inquiries and service explanations.",
-    techStack: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "AI Chatbot", "Gemini API"],
+      "AI-powered interior design website with a chatbot.",
+    techStack: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "AI Chatbot", "Vercel"],
     githubUrl: "https://github.com/NagaTejaSriCore/luxespace-interiors",
     demoUrl: "https://luxespace-interiors-eta.vercel.app/",
-  },
-  {
-    id: "crewai-game",
-    title: "CrewAI Game",
-    category: "AI & GenAI",
-    isFeatured: false,
-    shortDescription:
-      "Multi-agent game built with CrewAI in Google Colab and served publicly with ngrok.",
-    colabNote: "Runs from a Colab notebook via ngrok",
-    techStack: ["CrewAI", "Python", "Google Colab", "ngrok"],
-    githubUrl: "https://github.com/NagaTejaSriCore/Buliding-Game-Using-Crew",
-    demoUrl: undefined,
-  },
-  {
-    id: "job-search-rag",
-    title: "Job Search RAG",
-    category: "AI & GenAI",
-    isFeatured: false,
-    shortDescription:
-      "RAG-based assistant helping users search and query job listings using context retrieval.",
-    techStack: ["Python", "RAG", "Gemini API"],
-    githubUrl: "https://github.com/NagaTejaSriCore/JobSearch_RAG",
-    demoUrl: undefined,
   },
   {
     id: "event-feedback",
     title: "Event Feedback Analyzer",
     category: "Full-Stack",
-    isFeatured: false,
     shortDescription:
-      "Tool that analyzes event feedback responses to organize attendee input and surface key insights.",
-    techStack: ["React.js", "Flask", "Python", "Gemini API"],
+      "Categorizes event feedback and runs sentiment analysis.",
+    techStack: ["React.js", "Flask", "Python", "Cohere API"],
     githubUrl: "https://github.com/NagaTejaSriCore/event-feedback-analyzer",
-    demoUrl: "https://event-feedback-analyzer.vercel.app/",
+    demoUrl: "https://event-feedback-analyzer-lsjc.onrender.com/",
   },
 ];

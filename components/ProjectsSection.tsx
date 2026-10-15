@@ -18,10 +18,10 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 scroll-mt-24">
       <SectionHeading
-        number="02"
+        number="03"
         category="SELECTED WORK"
         title="PROJECTS"
-        description="Projects I've built exploring agentic AI, intelligent automation, and full-stack development."
+        description="Projects I've built exploring agentic AI, intelligent automation, and full-stack web applications."
       />
 
       {/* Filter Tabs */}

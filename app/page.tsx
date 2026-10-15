@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TechMarquee from "@/components/TechMarquee";
+import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import AboutSection from "@/components/AboutSection";
+import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -13,9 +14,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TechMarquee />
+      <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      <AboutSection />
+      <EducationSection />
       <ContactSection />
       <Footer />
     </main>

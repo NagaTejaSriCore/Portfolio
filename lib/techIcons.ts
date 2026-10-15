@@ -109,9 +109,17 @@ const techIconMap: Record<string, TechIconConfig> = {
   Netlify: { icon: SiNetlify, color: "#00C7B7" },
   Render: { icon: SiRender, color: "#46E3B7" },
 
-  // Project Extras
+  // Project & Skill Extras
   Vite: { icon: SiVite, color: "#646CFF" },
   ngrok: { icon: Globe, color: "#1F1E24" },
+  "Cohere API": { icon: Brain, color: "#D97706" },
+  Cohere: { icon: Brain, color: "#D97706" },
+  Antigravity: { icon: Cpu, color: "#3B82F6" },
+  Claude: { icon: Bot, color: "#D97706" },
+  ChatGPT: { icon: TbBrandOpenai, color: "#10A37F" },
+  "LLM APIs (Gemini, Groq)": { icon: Cpu, color: "#8E75B2" },
+  "RAG (fundamentals)": { icon: Database, color: "#3B82F6" },
+  "Next.js (basic)": { icon: SiNextdotjs, color: "#E4E4E7" },
 };
 
 export function getTechIconConfig(techName: string): TechIconConfig {

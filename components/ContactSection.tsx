@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/data/site";
 import { motion, useReducedMotion, Variants } from "framer-motion";
-import { Mail, FileText, ArrowUpRight, Copy, Check } from "lucide-react";
+import { Mail, FileText, ArrowUpRight, Copy, Check, Phone } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa6";
 
@@ -124,7 +124,7 @@ export default function ContactSection() {
         {/* 2. Small Section Label */}
         <motion.div variants={!shouldReduceMotion ? itemVariants : undefined}>
           <span className="text-xs font-mono font-bold tracking-[0.2em] text-accent-blue uppercase mb-4 block">
-            04 / GET IN TOUCH
+            05 / GET IN TOUCH
           </span>
         </motion.div>
 
@@ -196,18 +196,37 @@ export default function ContactSection() {
                   </>
                 )}
               </button>
-              <span className="sr-only" aria-live="polite" role="status">
-                {copied ? "Email address copied to clipboard" : ""}
-              </span>
+            </div>
+
+            {/* Download Resume Button */}
+            <div className="mt-6 mb-2">
+              <a
+                href="/Naga_Tejasri_Resume.pdf"
+                download="Naga_Tejasri_Resume.pdf"
+                className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white text-xs font-bold tracking-wider uppercase transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
+              >
+                <FileText className="w-4 h-4" />
+                <span>DOWNLOAD RESUME</span>
+              </a>
             </div>
           </motion.div>
         )}
 
-        {/* 6. Secondary Links Row */}
+        {/* 6. Clean Links Row: Phone, GitHub, LinkedIn */}
         <motion.div
           variants={!shouldReduceMotion ? itemVariants : undefined}
-          className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-xs font-mono text-text-secondary pt-2"
+          className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs font-mono text-text-secondary pt-2"
         >
+          {/* Phone */}
+          <a
+            href="tel:6302227698"
+            aria-label="Phone Number"
+            className="inline-flex items-center space-x-2 hover:text-accent-blue transition-colors group p-1"
+          >
+            <Phone className="w-4 h-4 group-hover:scale-110 transition-transform text-accent-blue" />
+            <span>6302227698</span>
+          </a>
+
           {siteConfig.githubUrl && (
             <a
               href={siteConfig.githubUrl}
@@ -232,15 +251,6 @@ export default function ContactSection() {
               <span>LinkedIn</span>
             </a>
           )}
-          <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 hover:text-accent-blue transition-colors group p-1"
-          >
-            <FileText className="w-4 h-4 group-hover:scale-110 transition-transform text-accent-blue" />
-            <span>Resume PDF</span>
-          </a>
         </motion.div>
       </motion.div>
     </section>
