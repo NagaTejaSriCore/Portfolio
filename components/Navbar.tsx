@@ -116,7 +116,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050505]/90 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-2xl"
+          ? "bg-bg-main/90 backdrop-blur-md border-b border-border-subtle py-3.5 shadow-2xl"
           : "bg-transparent py-5 border-b border-transparent"
       }`}
     >
@@ -127,7 +127,7 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, "#home")}
           className="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg p-1"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-blue via-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-accent-blue/20 group-hover:scale-105 transition-transform shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-accent-blue flex items-center justify-center shadow-md shadow-accent-blue/20 group-hover:scale-105 transition-transform shrink-0">
             <span className="text-white font-black text-xs tracking-tighter">
               NT
             </span>
@@ -197,7 +197,7 @@ export default function Navbar() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation menu"
-          className="xl:hidden text-text-primary p-2 focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg bg-bg-card border border-white/[0.08]"
+          className="xl:hidden text-text-primary p-2 focus:outline-none focus:ring-2 focus:ring-accent-blue rounded-lg bg-bg-card border border-border-subtle"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -211,7 +211,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="xl:hidden bg-[#0A0A0D] border-b border-white/[0.08] overflow-hidden"
+            className="xl:hidden bg-bg-card border-b border-border-subtle overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col space-y-4">
               {navItems.map((item) => {
@@ -230,7 +230,7 @@ export default function Navbar() {
                   </a>
                 );
               })}
-              <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
+              <div className="pt-4 border-t border-border-subtle flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   {siteConfig.githubUrl && (
                     <a
@@ -260,7 +260,7 @@ export default function Navbar() {
                   href="/Naga_Tejasri_Resume.pdf"
                   download="Naga_Tejasri_Resume.pdf"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-accent-blue text-white font-bold text-xs uppercase"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white font-bold text-xs uppercase"
                 >
                   <FileText className="w-3.5 h-3.5" />
                   <span>RESUME</span>

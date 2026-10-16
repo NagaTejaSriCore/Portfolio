@@ -64,7 +64,7 @@ export default function EducationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-bg-card rounded-2xl border border-white/[0.08] hover:border-accent-blue/40 p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.12)] group"
+              className="bg-bg-card rounded-2xl border border-border-subtle hover:border-accent-blue p-6 sm:p-8 transition-all duration-300 group"
             >
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <div className="flex flex-wrap items-center gap-2">
@@ -74,13 +74,13 @@ export default function EducationSection() {
                   </span>
 
                   {/* Score Chip */}
-                  <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
                     <span>{item.score}</span>
                   </span>
                 </div>
 
                 {/* Year Chip */}
-                <div className="inline-flex items-center space-x-1.5 text-xs font-mono text-text-secondary bg-[#141418] px-3 py-1 rounded-full border border-white/[0.06]">
+                <div className="inline-flex items-center space-x-1.5 text-xs font-mono text-text-secondary bg-bg-card px-3 py-1 rounded-full border border-border-subtle">
                   <Calendar className="w-3.5 h-3.5 text-accent-blue" />
                   <span>{item.period}</span>
                 </div>

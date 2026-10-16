@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/[0.08] bg-[#030304] py-8 relative z-10 select-none">
+    <footer className="border-t border-border-subtle bg-bg-main py-8 relative z-10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
         {/* Left: Copyright */}
         <div>
@@ -53,7 +53,7 @@ export default function Footer() {
           <button
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="p-2 rounded-full bg-[#0E0E10] border border-white/[0.08] text-text-secondary hover:text-white hover:border-accent-blue transition-all group"
+            className="p-2 rounded-full bg-bg-card border border-border-subtle text-text-secondary hover:text-white hover:border-accent-blue transition-all group"
           >
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform text-accent-blue" />
           </button>

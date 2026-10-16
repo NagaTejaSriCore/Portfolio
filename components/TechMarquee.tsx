@@ -5,24 +5,19 @@ import { marqueeTechnologies, MarqueeItem } from "@/data/skills";
 import { getTechIconConfig } from "@/lib/techIcons";
 
 function TechTile({ item }: { item: MarqueeItem }) {
-  const { icon: IconComponent, color } = getTechIconConfig(item.name);
+  const { icon: IconComponent } = getTechIconConfig(item.name);
 
   return (
     <div
       tabIndex={0}
       aria-label={`${item.name} technology tile`}
-      style={{
-        // Dynamic hover border tint style
-        ["--brand-color" as any]: color,
-      }}
-      className="w-[150px] sm:w-[170px] md:w-[190px] h-[140px] sm:h-[155px] flex-shrink-0 bg-bg-card hover:bg-[#121216] rounded-2xl border border-white/[0.08] hover:border-[var(--brand-color)] flex flex-col items-center justify-center p-4 transition-all duration-300 group hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-accent-blue cursor-default"
+      className="w-[150px] sm:w-[170px] md:w-[190px] h-[140px] sm:h-[155px] flex-shrink-0 bg-bg-card hover:bg-bg-card rounded-2xl border border-border-subtle hover:border-accent-blue flex flex-col items-center justify-center p-4 transition-all duration-300 group hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-accent-blue cursor-default"
     >
       <div
-        className="w-12 h-12 rounded-xl bg-white/[0.03] group-hover:bg-white/[0.08] border border-white/[0.05] flex items-center justify-center mb-3 transition-all duration-300"
+        className="w-12 h-12 rounded-xl bg-bg-main border border-border-subtle flex items-center justify-center mb-3 transition-all duration-300"
       >
         <IconComponent
-          className="w-9 h-9 sm:w-10 sm:h-10 group-hover:scale-105 transition-transform duration-300"
-          style={{ color }}
+          className="w-9 h-9 sm:w-10 sm:h-10 text-accent-blue group-hover:scale-105 transition-transform duration-300"
         />
       </div>
       <span className="text-xs font-extrabold tracking-wider text-white uppercase text-center">
@@ -43,14 +38,14 @@ export default function TechMarquee() {
   const duplicatedTech = [...marqueeTechnologies, ...marqueeTechnologies];
 
   return (
-    <section className="py-12 md:py-16 bg-[#050505] border-y border-white/[0.05] relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-bg-main border-y border-border-subtle relative overflow-hidden">
 
       {/* Edge Fade Masks */}
-      <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-bg-main to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-bg-main to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
-        <p className="text-[11px] font-mono font-semibold tracking-[0.25em] text-text-muted uppercase">
+        <p className="text-[11px] font-mono font-semibold tracking-[0.25em] text-text-secondary uppercase">
           TECHNOLOGIES & FRAMEWORKS
         </p>
       </div>

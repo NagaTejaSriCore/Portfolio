@@ -54,6 +54,18 @@ export const marqueeTechnologies: MarqueeItem[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
+    id: "core-concepts",
+    title: "Core Concepts",
+    badge: "FOUNDATIONS",
+    description: "Fundamental computer science, database, and responsive web design concepts.",
+    skills: [
+      { name: "OOP" },
+      { name: "DBMS" },
+      { name: "DSA (Learning)" },
+      { name: "Responsive Web Design" },
+    ],
+  },
+  {
     id: "languages-core",
     title: "Languages & Core",
     badge: "CORE",

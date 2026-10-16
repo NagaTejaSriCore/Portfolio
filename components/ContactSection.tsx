@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/data/site";
 import { motion, useReducedMotion, Variants } from "framer-motion";
-import { Mail, FileText, ArrowUpRight, Copy, Check, Phone } from "lucide-react";
+import { Mail, FileText, ArrowUpRight, Copy, Check, Phone, MapPin } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa6";
 
@@ -116,7 +116,7 @@ export default function ContactSection() {
       >
         {/* 1. Round Icon Button */}
         <motion.div variants={!shouldReduceMotion ? itemVariants : undefined}>
-          <div className="w-20 h-20 rounded-full bg-[#0E0E10] border border-white/[0.08] flex items-center justify-center shadow-[0_0_25px_rgba(59,130,246,0.15)] mb-4 hover:border-accent-blue/40 transition-all duration-300">
+          <div className="w-20 h-20 rounded-full bg-bg-card border border-border-subtle flex items-center justify-center mb-4 hover:border-accent-blue transition-all duration-300">
             <Mail className="w-8 h-8 text-accent-blue" />
           </div>
         </motion.div>
@@ -128,15 +128,13 @@ export default function ContactSection() {
           </span>
         </motion.div>
 
-        {/* 3. Two-Line Heading */}
+        {/* 3. Two-Line Heading (Clean without glow or colored text-shadow) */}
         <motion.h2
           variants={!shouldReduceMotion ? itemVariants : undefined}
           className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-[1.08] mb-6 text-center"
         >
           <span className="text-white block">LET&apos;S BUILD</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6] block">
-            SOMETHING GREAT.
-          </span>
+          <span className="text-accent-blue block">SOMETHING GREAT.</span>
         </motion.h2>
 
         {/* 4. Supporting Text */}
@@ -149,7 +147,7 @@ export default function ContactSection() {
           hello, get in touch.
         </motion.p>
 
-        {/* 5. One Large White Pill Button (Rendered only if email is defined) */}
+        {/* 5. Main Action Button */}
         {email && (
           <motion.div
             variants={!shouldReduceMotion ? itemVariants : undefined}
@@ -160,22 +158,22 @@ export default function ContactSection() {
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
               aria-label={`Send email to ${email}`}
-              className="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-[#050505] font-black text-sm sm:text-base tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.35)] hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-blue"
+              className="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white font-black text-sm sm:text-base tracking-wider transition-all duration-300 shadow-md shadow-accent-blue/20 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-blue"
             >
-              <Mail className="w-5 h-5 text-[#050505]" />
+              <Mail className="w-5 h-5 text-white" />
               <span className="normal-case">{email}</span>
-              <ArrowUpRight className="w-4 h-4 text-[#050505]" />
+              <ArrowUpRight className="w-4 h-4 text-white" />
             </a>
 
             {/* Fallback & Copy actions */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-mono text-text-muted mt-4">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-mono text-text-secondary mt-4">
               <a
                 href={mailtoHref}
                 className="hover:text-accent-blue transition-colors underline-offset-4 hover:underline"
               >
                 Use my default mail app instead
               </a>
-              <span className="text-white/20 select-none" aria-hidden="true">
+              <span className="text-border-subtle select-none" aria-hidden="true">
                 •
               </span>
               <button
@@ -203,16 +201,16 @@ export default function ContactSection() {
               <a
                 href="/Naga_Tejasri_Resume.pdf"
                 download="Naga_Tejasri_Resume.pdf"
-                className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white text-xs font-bold tracking-wider uppercase transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
+                className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-bg-card hover:bg-bg-card text-white text-xs font-bold tracking-wider uppercase border border-border-subtle hover:border-accent-blue transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
               >
-                <FileText className="w-4 h-4" />
+                <FileText className="w-4 h-4 text-accent-blue" />
                 <span>DOWNLOAD RESUME</span>
               </a>
             </div>
           </motion.div>
         )}
 
-        {/* 6. Clean Links Row: Phone, GitHub, LinkedIn */}
+        {/* 6. Clean Links Row: Phone, Location, GitHub, LinkedIn */}
         <motion.div
           variants={!shouldReduceMotion ? itemVariants : undefined}
           className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs font-mono text-text-secondary pt-2"
@@ -226,6 +224,12 @@ export default function ContactSection() {
             <Phone className="w-4 h-4 group-hover:scale-110 transition-transform text-accent-blue" />
             <span>6302227698</span>
           </a>
+
+          {/* Location */}
+          <div className="inline-flex items-center space-x-2 text-text-secondary group p-1">
+            <MapPin className="w-4 h-4 text-accent-blue shrink-0" />
+            <span>Hyderabad, Telangana, India</span>
+          </div>
 
           {siteConfig.githubUrl && (
             <a

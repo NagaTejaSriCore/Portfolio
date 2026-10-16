@@ -21,19 +21,8 @@ function cleanText(text?: string): string | undefined {
   return trimmed.length > 0 ? trimmed : undefined;
 }
 
-function getTagStyle(type: TimelineItem["tagType"]) {
-  switch (type) {
-    case "degree":
-      return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-    case "badge":
-      return "bg-amber-500/10 text-amber-400 border-amber-500/20";
-    case "hackathon":
-      return "bg-purple-500/10 text-purple-400 border-purple-500/20";
-    case "program":
-      return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
-    default:
-      return "bg-accent-blue/10 text-accent-blue border-accent-blue/20";
-  }
+function getTagStyle(_type?: TimelineItem["tagType"]) {
+  return "bg-accent-blue/10 text-accent-blue border-accent-blue/20";
 }
 
 interface TimelineCardProps {
@@ -78,12 +67,12 @@ function TimelineCard({
   const textColor = useTransform(
     itemProgress,
     [0, 1],
-    ["rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.75)"]
+    ["#94A3B8", "#94A3B8"]
   );
   const borderColor = useTransform(
     itemProgress,
     [0, 1],
-    ["rgba(255, 255, 255, 0.08)", "rgba(59, 130, 246, 0.4)"]
+    ["#334155", "#3B82F6"]
   );
   const boxShadow = useTransform(
     itemProgress,
@@ -95,11 +84,11 @@ function TimelineCard({
   );
 
   // Dot styling interpolation
-  const dotBg = useTransform(itemProgress, [0, 1], ["#0E0E10", "#3B82F6"]);
+  const dotBg = useTransform(itemProgress, [0, 1], ["#1E293B", "#3B82F6"]);
   const dotBorder = useTransform(
     itemProgress,
     [0, 1],
-    ["rgba(255, 255, 255, 0.2)", "#3B82F6"]
+    ["#334155", "#3B82F6"]
   );
   const dotBoxShadow = useTransform(
     itemProgress,
@@ -114,9 +103,9 @@ function TimelineCard({
   if (reducedMotion) {
     return (
       <div className="relative group">
-        <div className="absolute -left-[19px] sm:-left-[23px] md:-left-[27px] top-6 w-3.5 h-3.5 rounded-full bg-accent-blue border-2 border-accent-blue shadow-[0_0_14px_#3B82F6] z-10" />
+        <div className="absolute -left-[19px] sm:-left-[23px] md:-left-[27px] top-6 w-3.5 h-3.5 rounded-full bg-accent-blue border-2 border-accent-blue z-10" />
 
-        <div className="bg-[#0E0E10] rounded-2xl border border-accent-blue/40 p-5 sm:p-6 shadow-xl">
+        <div className="bg-bg-card rounded-2xl border border-border-subtle p-5 sm:p-6 shadow-xl">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
             <div className="flex flex-wrap items-center gap-2">
               <span
@@ -127,14 +116,14 @@ function TimelineCard({
                 {item.tag}
               </span>
               {item.levelChip && (
-                <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
                   {item.levelChip}
                 </span>
               )}
             </div>
 
             {dateText && (
-              <span className="text-xs font-mono text-text-muted">
+              <span className="text-xs font-mono text-text-secondary">
                 {dateText}
               </span>
             )}
@@ -155,7 +144,7 @@ function TimelineCard({
           </p>
 
           {builtText && (
-            <p className="text-xs text-text-muted font-mono leading-relaxed mt-2 pl-3 border-l-2 border-accent-blue/40">
+            <p className="text-xs text-text-secondary font-mono leading-relaxed mt-2 pl-3 border-l-2 border-accent-blue/40">
               {builtText}
             </p>
           )}
@@ -183,7 +172,7 @@ function TimelineCard({
           borderColor: borderColor,
           boxShadow: boxShadow,
         }}
-        className="bg-[#0E0E10] rounded-2xl border p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue/40"
+        className="bg-bg-card rounded-2xl border border-border-subtle p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue"
       >
         {/* Card Header: Tag Pill, Level Chip, Date */}
         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -197,14 +186,14 @@ function TimelineCard({
             </span>
 
             {item.levelChip && (
-              <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30">
+              <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
                 {item.levelChip}
               </span>
             )}
           </div>
 
           {dateText && (
-            <span className="text-xs font-mono text-text-muted">
+            <span className="text-xs font-mono text-text-secondary">
               {dateText}
             </span>
           )}
@@ -235,7 +224,7 @@ function TimelineCard({
 
         {/* Optional Built Details */}
         {builtText && (
-          <p className="text-xs text-text-muted font-mono leading-relaxed mt-2 pl-3 border-l-2 border-accent-blue/40">
+          <p className="text-xs text-text-secondary font-mono leading-relaxed mt-2 pl-3 border-l-2 border-accent-blue/40">
             {builtText}
           </p>
         )}
@@ -283,16 +272,16 @@ export default function AboutSection() {
       >
         <div className="space-y-4 text-base sm:text-lg text-text-secondary leading-relaxed max-w-3xl">
           <p>
-            I&apos;m Naga Tejasri, a student with a strong interest in building
-            AI-powered applications and full-stack web projects. I enjoy turning
-            ideas into working products, from agent-based AI systems to
-            practical web tools, and I learn best by building and improving real
-            projects.
+            I&apos;m Naga Tejasri, a student pursuing B.Tech CSE at NIAT, CDU
+            Campus, Hyderabad. I have a strong interest in building AI-powered
+            applications and full-stack web projects. I enjoy turning ideas into
+            working products, from agent-based AI systems to practical web tools,
+            and I learn best by building and improving real projects.
           </p>
           <p>
-            I&apos;m looking for internship and entry-level opportunities where
-            I can contribute, learn from experienced teams, and keep growing my
-            skills.
+            I communicate fluently in English and Telugu. I&apos;m looking for
+            internship and entry-level opportunities where I can contribute,
+            learn from experienced teams, and keep growing my skills.
           </p>
         </div>
 
@@ -300,7 +289,7 @@ export default function AboutSection() {
           <a
             href="/Naga_Tejasri_Resume.pdf"
             download="Naga_Tejasri_Resume.pdf"
-            className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white text-xs font-bold tracking-wider uppercase transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
+            className="inline-flex items-center space-x-2.5 px-6 py-3.5 rounded-full bg-accent-blue hover:bg-accent-blueHover text-white text-xs font-bold tracking-wider uppercase transition-all shadow-lg shadow-accent-blue/20 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue"
           >
             <FileText className="w-4 h-4" />
             <span>DOWNLOAD RESUME</span>
@@ -313,17 +302,17 @@ export default function AboutSection() {
         ref={containerRef}
         className="relative pl-6 sm:pl-8 md:pl-10 min-h-[500px]"
       >
-        {/* Track Line (Dim Gray in background) */}
-        <div className="absolute top-3 bottom-3 left-2 sm:left-3 md:left-4 w-0.5 bg-white/10 rounded-full" />
+        {/* Track Line */}
+        <div className="absolute top-3 bottom-3 left-2 sm:left-3 md:left-4 w-0.5 bg-border-subtle rounded-full" />
 
-        {/* Scroll-Driven Active Fill Line (Bright Blue to Violet Gradient) */}
+        {/* Scroll-Driven Active Fill Line (Accent Blue) */}
         {!shouldReduceMotion ? (
           <motion.div
             style={{ scaleY }}
-            className="absolute top-3 bottom-3 left-2 sm:left-3 md:left-4 w-0.5 bg-gradient-to-b from-[#3B82F6] via-[#6366F1] to-[#8B5CF6] rounded-full origin-top shadow-[0_0_10px_#3B82F6]"
+            className="absolute top-3 bottom-3 left-2 sm:left-3 md:left-4 w-0.5 bg-accent-blue rounded-full origin-top"
           />
         ) : (
-          <div className="absolute top-3 bottom-3 left-2 sm:left-3 md:left-4 w-0.5 bg-gradient-to-b from-[#3B82F6] via-[#6366F1] to-[#8B5CF6] rounded-full origin-top shadow-[0_0_10px_#3B82F6]" />
+          <div className="absolute top-3 bottom-3 left-2 sm:left-3 md:left-4 w-0.5 bg-accent-blue rounded-full origin-top" />
         )}
 
         <div className="space-y-8">

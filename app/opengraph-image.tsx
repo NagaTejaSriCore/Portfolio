@@ -12,7 +12,7 @@ export default function Image() {
     (
       <div
         style={{
-          background: "#000000",
+          background: "#0F172A",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -40,7 +40,7 @@ export default function Image() {
           style={{
             fontSize: 32,
             fontWeight: 500,
-            color: "#a1a1aa",
+            color: "#94A3B8",
             letterSpacing: "0.04em",
           }}
         >

@@ -56,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="bg-[#050505] text-white antialiased selection:bg-accent-blue/30 selection:text-white">
+      <body className="bg-bg-main text-white antialiased selection:bg-accent-blue/30 selection:text-white">
         <SmoothScroll>
           <ScrollProgress />
           {children}

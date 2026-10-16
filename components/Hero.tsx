@@ -8,7 +8,7 @@ import { ArrowUpRight, Mail, FileText, ChevronDown, GraduationCap } from "lucide
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen w-full bg-[#050505] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-12 pt-28 pb-8 overflow-hidden select-none scroll-mt-24">
+    <section id="home" className="relative min-h-screen w-full bg-bg-main flex flex-col justify-between items-center px-4 sm:px-6 lg:px-12 pt-28 pb-8 overflow-hidden select-none scroll-mt-24">
       
       {/* Main Centered Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center my-auto py-4">
@@ -18,19 +18,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="inline-flex items-center space-x-2 px-4 py-1 rounded-full bg-bg-card border border-white/[0.08] mb-4"
+          className="inline-flex items-center space-x-2 px-4 py-1 rounded-full bg-bg-card border border-border-subtle mb-4"
         >
           <span className="text-xs font-semibold tracking-[0.2em] text-accent-blue uppercase">
             {siteConfig.roleLabel}
           </span>
         </motion.div>
 
-        {/* 2. Huge Name */}
+        {/* 2. Hero Name (Reduced size and weight) */}
         <motion.h1
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="w-full text-[clamp(2.75rem,7vw,6rem)] font-black tracking-tight text-white uppercase leading-[1.02] text-balance mb-3"
+          className="w-full text-[clamp(2.25rem,5.5vw,4.75rem)] font-extrabold tracking-tight text-white uppercase leading-[1.05] text-balance mb-3"
         >
           {siteConfig.name.replace(".", "")}
           <span className="text-accent-blue">.</span>
@@ -57,25 +57,25 @@ export default function Hero() {
           <span>B.Tech CSE · NIAT, CDU Campus · 2025 – 2029</span>
         </motion.div>
 
-        {/* 5. Short Text (Lighter grey for higher contrast) */}
+        {/* 5. Short Text */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="text-sm sm:text-base text-zinc-300 max-w-[680px] leading-relaxed text-balance mb-5"
+          className="text-sm sm:text-base text-text-secondary max-w-[680px] leading-relaxed text-balance mb-5"
         >
           {siteConfig.supportingText}
         </motion.p>
 
-        {/* 6. Green-dot Pill */}
+        {/* 6. Availability Pill */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.35 }}
-          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#0E0E10] border border-white/[0.08] mb-6"
+          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-bg-card border border-border-subtle mb-6"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-          <span className="text-xs font-semibold tracking-wide text-zinc-200">
+          <span className="w-2.5 h-2.5 rounded-full bg-accent-blue shrink-0" />
+          <span className="text-xs font-semibold tracking-wide text-text-secondary">
             {siteConfig.availability}
           </span>
         </motion.div>
@@ -90,7 +90,7 @@ export default function Hero() {
           {/* Primary Button: View Projects */}
           <a
             href="#projects"
-            className="inline-flex items-center justify-center space-x-1.5 px-4 sm:px-4.5 py-2.5 rounded-full bg-accent-blue text-white font-bold text-xs tracking-wider uppercase hover:bg-accent-blueHover transition-all shadow-md shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
+            className="inline-flex items-center justify-center space-x-1.5 px-4 sm:px-4.5 py-2.5 rounded-full bg-accent-blue text-white font-bold text-xs tracking-wider uppercase hover:bg-accent-blueHover transition-all shadow-md shadow-accent-blue/20 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
           >
             <span>View Projects</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -100,7 +100,7 @@ export default function Hero() {
           <a
             href="/Naga_Tejasri_Resume.pdf"
             download="Naga_Tejasri_Resume.pdf"
-            className="inline-flex items-center justify-center space-x-1.5 px-4 sm:px-4.5 py-2.5 rounded-full bg-accent-blue text-white font-bold text-xs tracking-wider uppercase hover:bg-accent-blueHover transition-all shadow-md shadow-accent-blue/20 hover:shadow-accent-blue/35 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
+            className="inline-flex items-center justify-center space-x-1.5 px-4 sm:px-4.5 py-2.5 rounded-full bg-accent-blue text-white font-bold text-xs tracking-wider uppercase hover:bg-accent-blueHover transition-all shadow-md shadow-accent-blue/20 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Download Resume</span>
@@ -112,7 +112,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="inline-flex items-center justify-center space-x-1.5 px-3.5 sm:px-4 py-2.5 rounded-full bg-bg-card hover:bg-bg-cardHover text-white font-bold text-xs tracking-wider uppercase border border-white/[0.1] hover:border-accent-blue/40 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
+            className="inline-flex items-center justify-center space-x-1.5 px-3.5 sm:px-4 py-2.5 rounded-full bg-bg-card hover:bg-bg-card text-white font-bold text-xs tracking-wider uppercase border border-border-subtle hover:border-accent-blue transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
           >
             <SiGithub className="w-3.5 h-3.5" />
             <span>GitHub</span>
@@ -124,16 +124,16 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
-            className="inline-flex items-center justify-center space-x-1.5 px-3.5 sm:px-4 py-2.5 rounded-full bg-bg-card hover:bg-bg-cardHover text-white font-bold text-xs tracking-wider uppercase border border-white/[0.1] hover:border-accent-blue/40 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
+            className="inline-flex items-center justify-center space-x-1.5 px-3.5 sm:px-4 py-2.5 rounded-full bg-bg-card hover:bg-bg-card text-white font-bold text-xs tracking-wider uppercase border border-border-subtle hover:border-accent-blue transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
           >
-            <FaLinkedin className="w-3.5 h-3.5 text-[#0077B5]" />
+            <FaLinkedin className="w-3.5 h-3.5 text-accent-blue" />
             <span>LinkedIn</span>
           </a>
 
           {/* Outline Button: Contact Me */}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center space-x-1.5 px-3.5 sm:px-4 py-2.5 rounded-full bg-bg-card hover:bg-bg-cardHover text-white font-bold text-xs tracking-wider uppercase border border-white/[0.1] hover:border-accent-blue/40 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
+            className="inline-flex items-center justify-center space-x-1.5 px-3.5 sm:px-4 py-2.5 rounded-full bg-bg-card hover:bg-bg-card text-white font-bold text-xs tracking-wider uppercase border border-border-subtle hover:border-accent-blue transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-blue whitespace-nowrap"
           >
             <Mail className="w-3.5 h-3.5 text-accent-blue" />
             <span>Contact Me</span>
@@ -146,7 +146,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="relative z-10 pt-4 flex flex-col items-center space-y-1 text-text-muted hover:text-accent-blue transition-colors cursor-pointer"
+        className="relative z-10 pt-4 flex flex-col items-center space-y-1 text-text-secondary hover:text-accent-blue transition-colors cursor-pointer"
         onClick={() => {
           const el = document.getElementById("skills");
           if ((window as any).lenis && el) {

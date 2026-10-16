@@ -18,23 +18,23 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="bg-bg-card rounded-2xl border border-white/[0.08] hover:border-accent-blue/40 overflow-hidden transition-all duration-300 group flex flex-col justify-between hover:shadow-[0_0_25px_rgba(59,130,246,0.12)] h-full"
+      className="bg-bg-card rounded-2xl border border-border-subtle hover:border-accent-blue overflow-hidden transition-all duration-300 group flex flex-col justify-between h-full"
     >
       <div className="p-5 sm:p-6 flex flex-col justify-between h-full">
         <div>
           {/* Category Label & Optional Featured Badge */}
           <div className="flex items-center justify-between mb-3 gap-2">
             <div className="flex items-center space-x-2">
-              <span className="text-[10px] font-mono font-bold tracking-widest px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-text-secondary uppercase">
+              <span className="text-[10px] font-mono font-bold tracking-widest px-2.5 py-0.5 rounded-full bg-bg-card border border-border-subtle text-text-secondary uppercase">
                 {project.category}
               </span>
               {project.isFeatured && (
-                <span className="text-[10px] font-mono font-bold tracking-widest px-2 py-0.5 rounded-full bg-accent-blue/10 border border-accent-blue/30 text-accent-blue uppercase">
+                <span className="text-[10px] font-mono font-bold tracking-widest px-2 py-0.5 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue uppercase">
                   FEATURED
                 </span>
               )}
             </div>
-            <span className="text-[10px] font-mono text-text-muted">0{index + 1}</span>
+            <span className="text-[10px] font-mono text-text-secondary">0{index + 1}</span>
           </div>
 
           {/* Project Title */}
@@ -50,13 +50,13 @@ export default function ProjectCard({
           {/* Technology Stack Chips (Icon + Name) */}
           <div className="flex flex-wrap gap-1.5 mb-4">
             {project.techStack.map((tech) => {
-              const { icon: TechIcon, color } = getTechIconConfig(tech);
+              const { icon: TechIcon } = getTechIconConfig(tech);
               return (
                 <span
                   key={tech}
-                  className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md bg-[#141418] text-[11px] font-mono text-text-primary border border-white/[0.06]"
+                  className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md bg-bg-card text-[11px] font-mono text-text-primary border border-border-subtle"
                 >
-                  <TechIcon className="w-3.5 h-3.5 shrink-0" style={{ color }} />
+                  <TechIcon className="w-3.5 h-3.5 shrink-0 text-accent-blue" />
                   <span>{tech}</span>
                 </span>
               );
@@ -65,7 +65,7 @@ export default function ProjectCard({
         </div>
 
         {/* Live Demo + GitHub Buttons */}
-        <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between">
+        <div className="pt-3 border-t border-border-subtle flex items-center justify-between">
           <div className="flex items-center space-x-4">
             {project.demoUrl && (
               <a

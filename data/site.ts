@@ -30,7 +30,7 @@ export interface SiteConfig {
 
 export const SITE_URL = "https://portfolio-rho-sable-31.vercel.app";
 
-// NOTE: Please place your actual PDF resume at: /public/resume/Naga_Tejasri_Resume.pdf
+// NOTE: Resume PDF is located at: /public/Naga_Tejasri_Resume.pdf
 export const siteConfig: SiteConfig = {
   name: "NAGA TEJASRI.",
   shortName: "NT",
@@ -52,13 +52,12 @@ export const siteConfig: SiteConfig = {
   resumeUrl: "/Naga_Tejasri_Resume.pdf",
   seo: {
     title: "Naga Tejasri | Student | Full-Stack & AI/ML",
-    description: "Personal portfolio of Naga Tejasri, a student building AI-powered applications, RAG systems, and full-stack projects.",
+    description: "Personal portfolio of Naga Tejasri, a student building AI-powered applications and full-stack projects.",
     keywords: [
       "Naga Tejasri",
       "Student",
       "Full-Stack",
       "AI/ML",
-      "RAG Systems",
       "AI Agents",
       "CORE9",
       "Inventra",

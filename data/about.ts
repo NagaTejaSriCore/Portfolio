@@ -30,6 +30,14 @@ export const timelineData: TimelineItem[] = [
       "I participated in the Murf AI Hackathon, where I built a voice-focused application that integrates Murf AI's text-to-speech technology.",
   },
   {
+    id: "hackathon-build-to-ship",
+    tag: "HACKATHON",
+    tagType: "hackathon",
+    title: "Build to Ship Hackathon",
+    description:
+      "I participated in the Build to Ship Hackathon, where I rapid-prototyped and shipped functional web applications under time constraints.",
+  },
+  {
     id: "hackathon-takeover",
     tag: "HACKATHON",
     tagType: "hackathon",
@@ -44,5 +52,13 @@ export const timelineData: TimelineItem[] = [
     title: "BRAVE Program",
     description:
       "I participated in the BRAVE Program, where I worked on finding real clients, understanding the problems their businesses face, and proposing practical solutions, such as building websites to help increase their revenue.",
+  },
+  {
+    id: "deployment-milestone",
+    tag: "DEPLOYMENT",
+    tagType: "program",
+    title: "Cloud & Web App Deployments",
+    description:
+      "I have deployed multiple responsive web apps on Render, Vercel and Netlify, configuring build pipelines, environment configurations, and custom domains.",
   },
 ];

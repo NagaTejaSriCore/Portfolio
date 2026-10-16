@@ -33,7 +33,7 @@ export default function ProjectsSection() {
             className={`px-4 py-2 rounded-full text-xs font-mono font-semibold uppercase tracking-wider transition-all border ${
               activeTab === tab
                 ? "bg-accent-blue text-white border-accent-blue shadow-md shadow-accent-blue/20"
-                : "bg-bg-card text-text-secondary border-white/[0.08] hover:border-white/[0.2] hover:text-white"
+                : "bg-bg-card text-text-secondary border-border-subtle hover:border-accent-blue hover:text-white"
             }`}
           >
             {tab}
